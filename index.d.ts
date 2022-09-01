@@ -8,6 +8,8 @@ export type MaybeArray<T> = T | T[]
 
 export type MaybeNumber<T = string> = T | number
 
+export type Num = MaybeNumber<string>
+
 export type MaybeDate = Date | string | number
 
 export type MaybeRegex = RegExp | string

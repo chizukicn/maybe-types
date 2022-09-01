@@ -9,8 +9,11 @@
     "files": [
         "index.d.ts"
     ],
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "types",
+        "maybe-types"
+    ],
+    "author": "chizuki",
     "license": "MIT",
     "devDependencies": {
         "bumpp": "^8.2.1"
