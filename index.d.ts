@@ -1,8 +1,10 @@
 export type MaybePromise<T = any> = T | Promise<T>
 
-export type MaybeFunction<T> = T | ((...args: any[]) => T)
+export type Func<R = void, P extends any[] = any[]> = (...args: P) => R
 
-export type MaybeAsyncFunction<T> = MaybeFunction<MaybePromise<T>>
+export type MaybeFunction<T, P extends any[] = any[]> = T | Func<T, P>
+
+export type MaybeAsyncFunction<T, Promised extends boolean = false, P extends any[] = any[]> = Promised extends true ? MaybeFunction<MaybePromise<T>, P> : Func<MaybePromise<T>, P>
 
 export type MaybeArray<T> = T | T[]
 
