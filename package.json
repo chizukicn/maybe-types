@@ -4,6 +4,11 @@
   "description": "",
   "author": "chizuki",
   "license": "MIT",
+  "homepage": "https://github.com/chizukicn/maybe-types",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chizukicn/maybe-types"
+  },
   "keywords": [
     "types",
     "maybe-types"
