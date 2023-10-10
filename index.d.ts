@@ -1,10 +1,12 @@
-export type MaybePromise<T = any> = T | Promise<T>
+export type MaybePromise<T = any> = Promise<Awaited<T>> | Awaited<T>
 
-export type Func<R = void, P extends any[] = any[]> = (...args: P) => R
+export type Fn<R = void, P extends any[] = any[]> = (...args: P) => R
 
-export type MaybeFunction<T, P extends any[] = any[]> = T | Func<T, P>
+export type MaybeFunction<T, P extends any[] = any[]> = T | Fn<T, P>
 
-export type MaybeAsyncFunction<T, Promised extends boolean = false, P extends any[] = any[]> = Promised extends true ? MaybeFunction<MaybePromise<T>, P> : Func<MaybePromise<T>, P>
+export type MaybeFn<T, P extends any[] = any[]> = MaybeFunction<T,P>
+
+export type MaybeAsyncFunction<T, P extends any[] = any[],Promised extends boolean = T extends Fn ? false : true> = Promised extends true ? MaybeFunction<MaybePromise<T>, P> : Fn<MaybePromise<T>, P>
 
 export type MaybeArray<T> = T | T[]
 
@@ -17,3 +19,10 @@ export type MaybeDate = Date | string | number
 export type MaybeRegex = RegExp | string
 
 export type MaybeFalsy = false | null | undefined | "" | 0 | void
+
+export type UnwrapPromise <T> = T extends Promise<infer U> ? U : T
+
+export type UnwrapFunction <T> = T extends Fn<infer U> ? U : T
+
+export type UnwrapAsyncFunction <T> = T extends MaybeAsyncFunction<infer U> ? U : T
+

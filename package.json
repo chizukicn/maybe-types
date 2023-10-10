@@ -1,21 +1,27 @@
 {
-    "name": "maybe-types",
-    "version": "0.0.3",
-    "description": "",
-    "types": "index.d.ts",
-    "scripts": {
-        "bump": "bumpp --commit --push --tag"
-    },
-    "files": [
-        "index.d.ts"
-    ],
-    "keywords": [
-        "types",
-        "maybe-types"
-    ],
-    "author": "chizuki",
-    "license": "MIT",
-    "devDependencies": {
-        "bumpp": "^8.2.1"
-    }
+  "name": "maybe-types",
+  "version": "0.0.3",
+  "description": "",
+  "author": "chizuki",
+  "license": "MIT",
+  "keywords": [
+    "types",
+    "maybe-types"
+  ],
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts"
+  ],
+  "scripts": {
+    "bump": "bumpp --commit --push --tag",
+    "test": "vitest typecheck",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@curev/eslint-config": "^0.2.1",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.51.0",
+    "typescript": "^5.2.2",
+    "vitest": "^1.0.0-beta.1"
+  }
 }
