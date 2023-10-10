@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@curev/eslint-config": "^0.2.1",
-    "bumpp": "^8.2.1",
+    "bumpp": "^9.2.0",
     "eslint": "^8.51.0",
     "typescript": "^5.2.2",
     "vitest": "^1.0.0-beta.1"
