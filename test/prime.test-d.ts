@@ -1,9 +1,9 @@
 import { expectTypeOf, it } from "vitest";
-import type { MaybeArray, MaybeDate, MaybeFalsy, MaybeNumber, MaybeRegex } from "..";
+import type { MaybeArray, MaybeDate, MaybeFalsy, MaybeNumeric, MaybeRegex } from "..";
 
 it("should typecheck prime", () => {
-  expectTypeOf<MaybeNumber>(1);
-  expectTypeOf<MaybeNumber>("1");
+  expectTypeOf<MaybeNumeric>(1);
+  expectTypeOf<MaybeNumeric>("1");
 
   expectTypeOf<MaybeRegex>(/\d+/);
   expectTypeOf<MaybeRegex>("\d+");

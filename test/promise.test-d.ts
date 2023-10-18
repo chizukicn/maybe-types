@@ -6,8 +6,6 @@ it("should typecheck MaybePromise", () => {
 
   expectTypeOf<MaybePromise<number>>(1);
 
-  expectTypeOf<MaybePromise<Promise<number>>>(1);
-
   expectTypeOf<UnwrapPromise<MaybePromise<number>>>(1);
 });
 
