@@ -19,14 +19,14 @@
   ],
   "scripts": {
     "bump": "bumpp --commit --push --tag",
-    "test": "vitest typecheck",
-    "lint": "eslint ."
+    "test": "vitest --typecheck",
+    "lint": "eslint"
   },
   "devDependencies": {
-    "@curev/eslint-config": "^0.2.1",
-    "bumpp": "^9.2.0",
-    "eslint": "^8.51.0",
-    "typescript": "^5.2.2",
-    "vitest": "^1.0.0-beta.1"
+    "@curev/eslint-config": "^0.6.0",
+    "bumpp": "^10.3.1",
+    "eslint": "^9.38.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.4"
   }
 }

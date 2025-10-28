@@ -1,12 +1,12 @@
 import type { MaybeAsyncFunction } from "../..";
 
 export interface SingletonPromiseReturn<T> {
-  (): Promise<T>
+  (): Promise<T>;
   /**
    * Reset current staled promise.
    * Await it to have proper shutdown.
    */
-  reset: () => Promise<void>
+  reset: () => Promise<void>;
 }
 
 /**

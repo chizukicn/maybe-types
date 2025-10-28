@@ -29,17 +29,16 @@ Import:
 ```ts
 import type { MaybePromise } from "maybe-types";
 
-const fn = async (arg: string): MaybePromise<string> => {
+async function fn(arg: string): MaybePromise<string> {
   if (arg === "foo") {
     return "bar";
   }
   return Promise.resolve("baz");
-};
+}
 
-const getPromise = async (): Promise<string> => {
+async function getPromise(): Promise<string> {
   return promise = await fn("foo");
-};
-
+}
 ```
 
 ## Development
