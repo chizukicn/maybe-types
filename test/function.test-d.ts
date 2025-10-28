@@ -1,5 +1,5 @@
-import { expectTypeOf, it } from "vitest";
 import type { Fn, MaybeAsyncFunction, MaybeFn, MaybeFunction, UnwrapAsyncFunction } from "..";
+import { expectTypeOf, it } from "vitest";
 import { createSingletonPromise } from "./fixtures/promise";
 
 it("should typecheck Function", () => {
@@ -16,11 +16,11 @@ it("should typecheck MaybeAsyncFunction", () => {
   expectTypeOf<MaybeAsyncFunction<number, [number]>>(1);
   expectTypeOf<MaybeAsyncFunction<number, [number]>>(Promise.resolve(1));
 
-  expectTypeOf<MaybeAsyncFunction<number, [number]>>(a => a);
+  expectTypeOf<MaybeAsyncFunction<number, [number]>>((a) => a);
 
-  const asyncFn = async (a: number) => a;
+  const _asyncFn = async (a: number) => a;
 
-  expectTypeOf<UnwrapAsyncFunction<typeof asyncFn>>(1);
+  expectTypeOf<UnwrapAsyncFunction<typeof _asyncFn>>(1);
 
   const promiseFn = createSingletonPromise(async (a: number) => a);
   expectTypeOf<() => Promise<number>>(promiseFn);

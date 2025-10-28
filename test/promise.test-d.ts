@@ -1,5 +1,5 @@
-import { expectTypeOf, it } from "vitest";
 import type { MaybePromise, UnwrapPromise } from "..";
+import { expectTypeOf, it } from "vitest";
 
 it("should typecheck MaybePromise", () => {
   expectTypeOf<MaybePromise<number>>(Promise.resolve(1));
@@ -8,4 +8,3 @@ it("should typecheck MaybePromise", () => {
 
   expectTypeOf<UnwrapPromise<MaybePromise<number>>>(1);
 });
-
