@@ -9,6 +9,32 @@
 
 A collection of types for `Maybe` in TypeScript.
 
+## Types
+
+### Core Types
+
+- **`MaybePromise<T>`** - Represents a value that may or may not be a promise. Useful for functions that can return either synchronous or asynchronous values.
+- **`UnwrapPromise<T>`** - Extracts the inner type from a Promise, returning the unwrapped type if it's a promise, otherwise returns the original type.
+
+### Function Types
+
+- **`Fn<R, P>`** - A function type with return type `R` and parameters `P` (defaults to any).
+- **`AsyncFn<R, P>`** - An asynchronous function type with return type `R` and parameters `P`.
+- **`MaybeFunction<T, P>`** - Represents either a value `T` or a function that returns `T` with parameters `P`.
+- **`MaybeFn<T, P>`** - Alias for `MaybeFunction<T, P>`.
+- **`MaybeAsyncFunction<T, P, Promised>`** - Represents either a value, a function returning a promise, or a function that may return synchronously or asynchronously based on the `Promised` flag.
+- **`UnwrapFunction<T>`** - Extracts the return type from a function type.
+- **`UnwrapAsyncFunction<T>`** - Extracts the return type from an async function or MaybeAsyncFunction type.
+
+### Primitive & Collection Types
+
+- **`MaybeArray<T>`** - Represents either a single value `T` or an array of `T`.
+- **`MaybeNumeric<T>`** - Represents either a number, bigint, or the type `T` (defaults to string). Useful for numeric string conversions.
+- **`Numeric`** - Union type of `number | bigint`.
+- **`MaybeDate`** - Represents a Date object, a timestamp number, or a date string.
+- **`MaybeRegex`** - Represents either a RegExp object or a regex pattern string.
+- **`MaybeFalsy`** - Union of all falsy values: `false | null | undefined | "" | 0 | void`.
+
 ## Usage
 
 Install package:
